@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# this requires the RPi.PGIO and pyOSC libraries
+# this requires the RPi.GPIO and pyOSC libraries
 
 from time import sleep
 import threading
