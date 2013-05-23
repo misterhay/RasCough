@@ -36,12 +36,12 @@ server.timeout = 0
 run = True
 
 # define the OSC addresses for the channels that we'll be controlling
-wireless = '/ch/01/mix/on'
 pulpit = '/ch/01/mix/on'
+lapel = '/ch/02/mix/on'
 
 # add the message handlers for the channels we're controlling
-server.addMsgHandler(wireless, muteHandler1)
-server.addMsgHandler(pulpit, muteHandler2)
+server.addMsgHandler(pulpit, muteHandler1)
+server.addMsgHandler(lapel, muteHandler2)
 
 '''
 #  check out this example of a threading OSC server https://code.google.com/p/osc-midi-bridge/wiki/OSC
