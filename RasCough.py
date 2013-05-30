@@ -38,6 +38,12 @@ run = True
 # define the OSC addresses for the channels that we'll be controlling
 pulpit = '/ch/01/mix/on'
 lapel = '/ch/02/mix/on'
+mutegroup1 = '/config/mute/1'
+mutegroup2 = '/config/mute/2'
+mutegroup3 = '/config/mute/3'
+mutegroup4 = '/config/mute/4'
+mutegroup5 = '/config/mute/5'
+mutegroup6 = '/config/mute/6'
 
 # add the message handlers for the channels we're controlling
 server.addMsgHandler(pulpit, muteHandler1)
