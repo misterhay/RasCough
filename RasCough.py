@@ -4,8 +4,8 @@
 
 from time import sleep
 import threading
-import RPi.GPIO as GPIO
 from OSC import OSCClient, OSCServer, OSCMessage
+import RPi.GPIO as GPIO
 
 # declare the GPIO pins we're using
 LED1 = 2
@@ -49,6 +49,20 @@ mutegroup6 = '/config/mute/6'
 server.addMsgHandler(pulpit, muteHandler1)
 server.addMsgHandler(lapel, muteHandler2)
 
+# define some functions for toggling the mute groups
+def toggleMuteGroup1(channel):
+ msg = OSCMessage('/config/mute/1')
+ msg.append(0)
+ client.send(msg)
+
+# check the state of the mute group, and set the value of the mute group accordingly
+# also change the value of the corresponding LED
+# in an infinte loop
+while True:
+ 
+
+
+
 '''
 #  check out this example of a threading OSC server https://code.google.com/p/osc-midi-bridge/wiki/OSC
 # start the OSC server to receive messages from the X32
@@ -76,3 +90,5 @@ client.send(msg)
 server.close()
 threadingServer.join()
 GPIO.cleanup()
+except KeyboardInterrupt:
+ GPIO.cleanup()
